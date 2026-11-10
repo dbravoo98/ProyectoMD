@@ -1,50 +1,41 @@
-# Proyecto 1: Implementación de Grafos No Dirigidos
+# Proyecto 1: Representacion y Propiedades de Grafos
 
-## Información del Estudiante
+## Informacion del Estudiante
 * Nombre: David Bravo Ospina
-* Código: 23771758
-* Asignatura: Matemáticas Discretas II
+* Codigo: 23771758
+* Asignatura: Matematicas Discretas II
+* Institucion: Universidad del Valle
 
 ---
 
-## Descripción del Proyecto
-Este proyecto consiste en el diseño e implementación de una estructura de datos para Grafos No Dirigidos utilizando programación orientada a objetos en Python. Permite la creación de vértices, el establecimiento de aristas bidireccionales y la aplicación de conceptos fundamentales de la teoría de grafos de manera computacional.
+## Justificacion de la Implementacion
+Para este proyecto decidi utilizar una Lista de Adyacencia implementada mediante diccionarios nativos de Python. 
+
+Escogi este metodo porque en Python los diccionarios permiten asociar de forma directa una clave (nodo origen) con otro diccionario (nodos destinos y sus respectivos pesos). Esto hace que buscar si dos vertices estan conectados sea muy facil y eficiente, evitando crear matrices gigantes llenas de ceros que consumen mucha memoria innecesaria si el grafo tiene pocas aristas.
+
+Durante el desarrollo del proyecto me fue bastante bien. La inicializacion usando la herramienta UV facilito mantener el entorno ordenado. El mayor reto fue estructurar la logica de las verificaciones matematicas (como saber si hay ciclos o si es un bosque) utilizando unicamente las funciones recursivas de busqueda en profundidad (DFS) y aplicando las relaciones matematicas elementales vistas en la teoria del curso sin usar librerias de terceros.
 
 ---
 
-## Tecnologías Utilizadas
-* Lenguaje: Python 3.13+ (Versión más reciente)
-* Entorno: Código nativo sin librerías externas.
+## Tecnologias Utilizadas
+* Lenguaje de programacion: Python 3.13+
+* Entorno y Gestor: UV
 
 ---
 
-## Requisitos e Instalación
+## Funcionalidades Implementadas
+* Creacion y almacenamiento de Grafos No Dirigidos.
+* Creacion y almacenamiento de Grafos Dirigidos.
+* Funcion de carga y lectura automatica desde archivos de texto estructurados por comas (source,target,weight).
+* Verificacion de conectividad del grafo.
+* Deteccion de ciclos mediante formulas de componentes conexas.
+* Clasificacion del grafo para determinar si cumple las condiciones de ser un Arbol o un Bosque.
 
-### Prerrequisitos
-Tener instalado Python 3.13 o superior en tu sistema. Puedes verificar tu versión con el comando:
+---
+
+## Instrucciones de Ejecucion
+Para ejecutar las pruebas del proyecto y comprobar los resultados impresos en la consola, abre la terminal en la carpeta raiz del proyecto y ejecuta el siguiente comando:
+
 ```bash
-python --version
+uv run main.py
 ```
-
-### Ejecución del Proyecto
-Sigue estos pasos para correr el programa en tu máquina local:
-
-1. Clonar o descargar este repositorio:
-   ```bash
-   git clone https://github.com/dbravoo98/ProyectoMD.git
-   ```
-2. Ingresar al directorio del proyecto:
-   ```bash
-   cd proyecto-grafos
-   ```
-3. Ejecutar el archivo principal:
-   ```bash
-   python main.py
-   ```
-
----
-
-## Estructura del Código
-* grafo.py: Clase principal que contiene la lógica de la lista de adyacencia, inserción de nodos y conexión de aristas.
-* main.py: Script de prueba con casos de uso interactivos que demuestran el correcto funcionamiento de la estructura.
-* README.md: Este manual de instrucciones.
